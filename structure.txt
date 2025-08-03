@@ -1,0 +1,32 @@
+trading-signals-website/
+├── assets/
+│   ├── css/
+│   │   ├── style.css
+│   │   └── bootstrap.min.css
+│   ├── js/
+│   │   ├── script.js
+│   │   └── bootstrap.bundle.min.js
+│   └── images/
+│       ├── logo.png
+│       ├── hero-bg.jpg
+│       └── features/
+├── includes/
+│   ├── header.php
+│   ├── footer.php
+│   ├── config.php
+│   └── functions.php
+├── admin/
+│   ├── dashboard.php
+│   ├── login.php
+│   └── subscribers.php
+├── emails/
+│   ├── subscriber-notification.php
+│   └── user-confirmation.php
+├── pages/
+│   ├── index.php
+│   ├── features.php
+│   ├── how-it-works.php
+│   ├── pricing.php
+│   └── contact.php
+├── process-subscription.php
+└── .htaccess
