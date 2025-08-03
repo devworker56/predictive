@@ -1,15 +1,19 @@
-Options -Indexes -MultiViews +FollowSymLinks
+# Disable directory listing
+Options -Indexes
 
+# Set default index file
+DirectoryIndex index.php
+
+# Enable URL rewriting
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /
     
-    # Redirect to HTTPS
+    # Redirect to HTTPS (optional)
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     
-    # Remove .php extension
+    # Remove .php extension (e.g., /about loads /about.php)
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME}\.php -f
-    RewriteRule ^(.*)$ $1.php [L]
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
 </IfModule>
