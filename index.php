@@ -1,4 +1,4 @@
-<?php include '/includes/header.php'; ?>
+<?php include 'includes/header.php'; ?>
 
     <section class="hero-section bg-dark-blue text-white py-5">
         <div class="container py-5">
