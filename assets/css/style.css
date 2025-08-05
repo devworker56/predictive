@@ -3,7 +3,6 @@
     --dark-blue: #0a2540;
     --primary: #00d4ff;
     --light-bg: #f6f9fc;
-    --navbar-height: 70px; /* Added variable for navbar height */
 }
 
 /* ===== BASE STYLES ===== */
@@ -11,8 +10,6 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--dark-blue);
     line-height: 1.6;
-    padding-top: var(--navbar-height); /* Ensures content starts below fixed navbar */
-    margin: 0; /* Remove default body margin */
 }
 
 /* ===== NAVBAR ===== */
@@ -20,17 +17,15 @@ body {
     background-color: var(--dark-blue);
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
+    position: sticky;
     top: 0;
-    width: 100%;
-    z-index: 1000;
+    z-index: 1020;
+    transition: all 0.3s ease;
 }
 
-/* Remove any potential gaps around navbar */
-.navbar-container {
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
+.navbar.scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 10px 0 !important;
 }
 
 .navbar-brand img {
@@ -59,8 +54,7 @@ body {
 .hero-section {
     background: linear-gradient(135deg, var(--dark-blue) 0%, #1a4b7a 100%);
     color: white;
-    padding: 40px 0; /* Reduced by two-thirds (original was 100px) */
-    margin-top: 0; /* Ensure no gap above hero */
+    padding: 100px 0;
 }
 
 /* ===== FEATURES SECTION ===== */
@@ -98,7 +92,7 @@ body {
 footer {
     background-color: var(--dark-blue);
     color: white;
-    padding: 20px 0 10px; /* Further reduced height */
+    padding: 60px 0 40px;
 }
 
 /* ===== BUTTONS ===== */
@@ -128,7 +122,7 @@ footer {
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (max-width: 992px) {
     .hero-section {
-        padding: 30px 0; /* Adjusted for tablet */
+        padding: 80px 0;
     }
     
     .features-section {
@@ -137,21 +131,17 @@ footer {
 }
 
 @media (max-width: 768px) {
-    :root {
-        --navbar-height: 60px; /* Smaller navbar on mobile */
-    }
-    
     .hero-section {
-        padding: 20px 0; /* Further reduced on mobile */
+        padding: 60px 0;
         text-align: center;
     }
     
     footer {
-        padding: 15px 0 8px; /* Smaller footer on mobile */
+        padding: 40px 0 30px;
         text-align: center;
     }
     
     .navbar {
-        padding: 8px 0; /* Tighter navbar on mobile */
+        padding: 10px 0;
     }
 }
