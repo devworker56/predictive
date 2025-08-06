@@ -1,7 +1,7 @@
 <?php include 'includes/header.php'; ?>
 
-    <section class="hero-section bg-dark-blue text-white py-3">
-        <div class="container py-3">
+    <section class="hero-section bg-dark-blue text-white py-5">
+        <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <h1 class="display-4 fw-bold mb-4">AI-Powered Trading Signals</h1>
