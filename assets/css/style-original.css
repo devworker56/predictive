@@ -6,37 +6,26 @@
 }
 
 /* ===== BASE STYLES ===== */
-html {
-    scroll-padding-top: 70px; /* Prevents navbar from covering content when jumping to anchors */
-}
-
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--dark-blue);
     line-height: 1.6;
 }
 
-/* Ensure no parent elements interfere with sticky positioning */
-body > * {
-    position: static;
-}
-
 /* ===== NAVBAR ===== */
 .navbar {
     background-color: var(--dark-blue);
     padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
-    top: -1px; /* Helps with smoother transition */
+    top: 0;
     z-index: 1020;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.scrolled {
-    padding: 10px 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(5px);
-    background-color: rgba(10, 37, 64, 0.98);
+    padding: 10px 0 !important;
 }
 
 .navbar-brand img {
@@ -154,9 +143,5 @@ footer {
     
     .navbar {
         padding: 10px 0;
-    }
-
-    html {
-        scroll-padding-top: 60px; /* Adjusted for mobile navbar height */
     }
 }
